@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Properties"
+    xtype="panel">
+    <items jcr:primaryType="cq:WidgetCollection">
+      <text1
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/foundation/form/textfield"
+          fieldLabel="Text 1"
+          value="Our coffee"
+          name="./text"/>
+      <text2
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/foundation/form/textfield"
+          fieldLabel="Text 2"
+          value="Food and drink"
+          name="./text"/>
+      <text3
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/foundation/form/textfield"
+          fieldLabel="Text 3"
+          value="Coffee Club"
+          name="./text"/>
+      <text4
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/foundation/form/textfield"
+          fieldLabel="Text 4"
+          value="Beyond the beans"
+          name="./text"/>
+      <link1
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/foundation/form/textfield"
+          fieldLabel="Link 1"
+          name="./text"/>
+      <link2
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/foundation/form/textfield"
+          fieldLabel="Link 2"
+          name="./text"/>
+      <link3
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/foundation/form/textfield"
+          fieldLabel="Link 3"
+          name="./text"/>
+      <link4
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/foundation/form/textfield"
+          fieldLabel="Link 4"
+          name="./text"/>
+        <src
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Src"
+            name="./src"
+            value="https://www.costa.co.uk/img/header/logo@2x.png"
+            xtype="textfield"/>
+        <width
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Width"
+            name="./width"
+            value="48"
+            xtype="textfield"/>
+        <height
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Height"
+            name="./height"
+            value="184"
+            xtype="textfield"/>
+    </items>
+</jcr:root>

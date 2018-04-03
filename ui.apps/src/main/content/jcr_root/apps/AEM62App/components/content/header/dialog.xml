@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Properties"
+    xtype="panel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <text1
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Cursive text"
+            value="We pour"
+            name="./text"
+            xtype="textfield"/>
+        <src
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Src"
+            name="./src"
+            value="https://static.wixstatic.com/media/8adf5c_3bd8cbcae77c4971a5409e20c0af5a2e.jpg"
+            xtype="textfield"/>
+        <text2
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Main text"
+            name="./width"
+            value="Our heart and soul into every cup"
+            xtype="textfield"/>
+    </items>
+</jcr:root>

@@ -1,0 +1,24 @@
+<script>
+const changeLogin = data => {
+  window.loginMenu.innerHTML = (data && 'Log out') || 'Log in'
+  window.loginMenu.onclick = logOut
+}
+
+const logOut = () => {
+  window.localStorage.removeItem('user')
+  document.dispatchEvent(new CustomEvent('userLogin'))
+}
+
+const listenForMenuLogin = () => {
+  document.addEventListener(
+    'userLogin',
+    function(e) {
+      console.log(e)
+      changeLogin(e.detail)
+    },
+    false
+  )
+}
+
+listenForMenuLogin()
+</script>

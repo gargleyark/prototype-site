@@ -1,0 +1,33 @@
+<script>
+console.log(1)
+const message = document.getElementsByClassName('header-text-2')[0]
+
+const changeContent = data => {
+  let name = 'every'
+  if (data) {
+    name = data.name.split(' ')[0]
+  }
+  message.innerHTML = 'Our heart and soul into ' + name + "'s cup"
+}
+
+const getURLParam = param => {
+  try {
+    return window.location.search
+      .match(new RegExp(param + '=[^&]*'))[0]
+      .split('=')[1]
+  } catch (e) {}
+  return ''
+}
+
+const listenForLogin = () => {
+  document.addEventListener(
+    'userLogin',
+    function(e) {
+      changeContent(e.detail)
+    },
+    false
+  )
+}
+
+listenForLogin()
+</script>

@@ -1,0 +1,97 @@
+<script>
+const getUser = () => {
+  return {
+    username: document.getElementById('username').value,
+    password: document.getElementById('password').value
+  }
+}
+
+const updatePage = data => {
+  if (data) {
+    document.getElementById('loginLeft').innerHTML =
+      '<div class="leftHeader">Your Costa, your club</div><div>Good morning, ' +
+      data.name.split(' ')[0] +
+      " </div><div>You've collected, " +
+      data.points +
+      ' points</div>'
+    document.getElementById('loginRight').innerHTML =
+      '<div>A cappuccino is 165 points</div><div>You are ' +
+      parseInt(100 / (165 / parseInt(data.points))) +
+      '% of the way there!</div>'
+  } else {
+    renderLogin()
+  }
+}
+
+const get = (url, params) => {
+  const xhr = new XMLHttpRequest()
+  xhr.open('GET', url + '?' + paramify(params))
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      const data = JSON.parse(xhr.responseText)
+      document.dispatchEvent(
+        new CustomEvent('userLogin', {
+          detail: data
+        })
+      )
+      localStorage.setItem(
+        'user',
+        JSON.stringify({
+          id: 1
+        })
+      )
+    }
+  }
+  xhr.send()
+}
+
+const paramify = object => {
+  var encodedString = ''
+  for (var prop in object) {
+    if (object.hasOwnProperty(prop)) {
+      if (encodedString.length > 0) {
+        encodedString += '&'
+      }
+      encodedString += encodeURI(prop + '=' + object[prop])
+    }
+  }
+  return encodedString
+}
+
+const renderLogin = () => {
+  document.getElementById('loginLeft').innerHTML =
+    'Log in to see how many points you have!'
+  document.getElementById('loginRight').innerHTML =
+    '<div>Username: <input type="text" id="username"></div> <div>Password: <input type="password" id="password"></div> <button onclick="login()">Log in</button>'
+}
+
+const login = () => {
+  const user =
+    (localStorage.getItem('user') &&
+      JSON.parse(localStorage.getItem('user'))) ||
+    getUser()
+  if ((user.username && user.password) || user.id) {
+    get('http://demo9574435.mockable.io/users/', user, updatePage)
+  } else {
+    renderLogin()
+  }
+}
+
+const listenForLoginLoginPage = () => {
+  document.addEventListener(
+    'userLogin',
+    function(e) {
+      updatePage(e.detail)
+    },
+    false
+  )
+}
+
+listenForLoginLoginPage()
+
+if (localStorage.getItem('user')) {
+  login()
+} else {
+  document.dispatchEvent(new CustomEvent('userLogin'))
+}
+</script>

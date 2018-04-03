@@ -1,0 +1,89 @@
+/*
+ *  Copyright 2015 Adobe Systems Incorporated
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two|Magra');
+
+.menuContainer {
+  margin: 0px auto;
+  max-height: 150px;
+  width: 100%;
+  font-family: 'Magra', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.menuContainer img {
+  margin: 20px;
+}
+
+.menuContainer a {
+  color: white;
+  display: inline-block;
+  margin: 10px;
+  margin-top: 30px;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.menuContainer a:hover {
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+.menuContainer:before {
+  content: 'COFFEE';
+  display: block;
+  position: absolute;
+  color: white;
+  letter-spacing: 8px;
+  font-size: 12px;
+  left: 45px;
+  top: 54px;
+}
+
+.right-nav {
+  position: absolute;
+  right: 30px;
+  top: 0px;
+}
+
+.menuContainer a.find-a-costa {
+  margin-right: 40px;
+}
+
+.find-a-costa:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  margin-left: -40px;
+  margin-top: -15px;
+  height: 40px;
+  width: 40px;
+  background: url('https://www.aurionpro.com/wp-content/uploads/2015/09/location-icon.png');
+  background-size: contain;
+}
+
+.login:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  margin-left: -40px;
+  margin-top: -15px;
+  height: 40px;
+  width: 40px;
+  background: url('https://www.freeiconspng.com/uploads/profile-icon-9.png');
+  background-size: contain;
+}

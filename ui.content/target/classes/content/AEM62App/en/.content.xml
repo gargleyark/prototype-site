@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="English"
+        pageTitle="New Project"
+        sling:resourceType="AEM62App/components/structure/page">
+        <header
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="AEM62App/components/content/header"
+            text1="We pour"
+            src="https://static.wixstatic.com/media/8adf5c_3bd8cbcae77c4971a5409e20c0af5a2e.jpg"
+            text2="Our heart and soul into every cup"/>
+        <menu
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="AEM62App/components/content/menu"
+            src="https://www.costa.co.uk/img/header/logo@2x.png"
+            height="35"
+            width="136"
+            text1="Our coffee"
+            text2="Food and drink"
+            text3="Coffee Club"
+            text4="Beyond the beans"/>
+        <login
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="AEM62App/components/content/login"/>
+        <image jcr:primaryType="nt:unstructured">
+            <file/>
+        </image>
+    </jcr:content>
+</jcr:root>
