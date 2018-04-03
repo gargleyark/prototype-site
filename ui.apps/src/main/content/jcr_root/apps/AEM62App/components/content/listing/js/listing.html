@@ -1,0 +1,44 @@
+<script>
+const renderListing = (data, template) => {
+  let html = ''
+  if (data && data.products) {
+    for (let index in data.products) {
+      const product = data.products[index]
+      html =
+        html +
+        template
+          .replace(/{name}/g, product.name || '')
+          .replace(/{price}/g, product.price || '')
+          .replace(/{src}/g, product.src || '')
+    }
+  }
+  document.getElementById('listingContainer').innerHTML = html
+}
+
+const getData = (url, next) => {
+  const xhr = new XMLHttpRequest()
+  xhr.open('GET', url)
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      let data = xhr.responseText
+      try {
+        data = JSON.parse(xhr.responseText)
+      } catch (e) {}
+      next(data)
+    }
+  }
+  xhr.send()
+}
+
+const getTemplate = data => {
+  getData('http://localhost:4502/content/AEM62App/menuItem.html', template => {
+    renderListing(data, template)
+  })
+}
+
+const getListing = () => {
+  getData('http://demo5716470.mockable.io/products/', getTemplate)
+}
+
+getListing()
+</script>

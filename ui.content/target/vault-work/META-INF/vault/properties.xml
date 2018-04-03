@@ -4,7 +4,7 @@
 <comment>AEM62App - UI content</comment>
 <entry key="path">/etc/packages/AEM62App/echo62.ui.content.zip</entry>
 <entry key="createdBy">MSteel</entry>
-<entry key="created">2018-03-29T14:58:50.038+0100</entry>
+<entry key="created">2018-04-03T10:25:19.470+0100</entry>
 <entry key="groupId">AEM62App</entry>
 <entry key="name">echo62.ui.content</entry>
 <entry key="description">UI content package for AEM62App</entry>

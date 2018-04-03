@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1522331930843
+Bnd-LastModified: 1522747520457
 Build-Jdk: 9.0.4
 Built-By: MSteel
 Bundle-Description: Bundles for Integration Tests for AEM62App

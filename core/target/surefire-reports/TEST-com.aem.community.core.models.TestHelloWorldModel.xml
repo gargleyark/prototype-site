@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.aem.community.core.models.TestHelloWorldModel" time="0.186" tests="1" errors="0" skipped="0" failures="0">
+<testsuite name="com.aem.community.core.models.TestHelloWorldModel" time="0.165" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="9.0.4+11"/>
@@ -62,5 +62,5 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="testGetMessage" classname="com.aem.community.core.models.TestHelloWorldModel" time="0.186"/>
+  <testcase name="testGetMessage" classname="com.aem.community.core.models.TestHelloWorldModel" time="0.165"/>
 </testsuite>

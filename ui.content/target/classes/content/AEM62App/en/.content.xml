@@ -25,6 +25,9 @@
         <login
             jcr:primaryType="nt:unstructured"
             sling:resourceType="AEM62App/components/content/login"/>
+        <listing
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="AEM62App/components/content/listing"/>
         <image jcr:primaryType="nt:unstructured">
             <file/>
         </image>
