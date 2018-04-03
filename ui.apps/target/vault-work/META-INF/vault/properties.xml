@@ -4,7 +4,7 @@
 <comment>AEM62App - UI apps</comment>
 <entry key="path">/etc/packages/AEM62App/echo62.ui.apps.zip</entry>
 <entry key="createdBy">MSteel</entry>
-<entry key="created">2018-03-29T14:58:49.512+0100</entry>
+<entry key="created">2018-04-03T10:25:18.893+0100</entry>
 <entry key="groupId">AEM62App</entry>
 <entry key="name">echo62.ui.apps</entry>
 <entry key="description">UI apps package for AEM62App</entry>
