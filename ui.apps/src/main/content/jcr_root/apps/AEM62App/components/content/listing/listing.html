@@ -13,6 +13,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
-<div class="listingContainer" id="listingContainer" data-sly-use.header="Listing">
+<div class="listingHeader">See our great range of ${properties.productChoice || 'coffee'}!</div>
+<div class="listingContainer" id="listingContainer" data-sly-use.header="Listing" products="${properties.productChoice || 'coffee'}">
   <sly data-sly-include="js/listing.html" />
 </div>

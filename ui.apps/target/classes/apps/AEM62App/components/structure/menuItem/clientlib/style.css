@@ -14,6 +14,15 @@
  *  limitations under the License.
  */
 
+.menuItem {
+  padding-bottom: 5px;
+  border-bottom: 1px solid gray;
+  width: 300px;
+  margin: auto;
+  margin-bottom: 40px;
+  height: 105px;
+}
+
 .page__main {
   position: relative;
   margin: 0 auto;
@@ -51,4 +60,64 @@
 .page__menu {
   position: absolute;
   width: 100%;
+}
+
+.listingHeader {
+  font-family: 'Lobster Two', cursive;
+  text-align: center;
+  width: 400px;
+  font-size: 28px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.listingContainer {
+  font-family: 'Magra', sans-serif;
+  margin: 0px auto;
+  padding: 100px;
+  text-align: center;
+  padding-top: 80px;
+  background: white;
+  font-size: 18px;
+}
+
+.left,
+.right {
+  display: block;
+  min-width: 700px;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.left {
+  background: white;
+  color: #111;
+  margin-bottom: 30px;
+}
+
+.listingContainer .leftHeader {
+  width: 608px;
+  height: 54px;
+  font-family: TradeGothic;
+  font-size: 32px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.69;
+  letter-spacing: normal;
+  text-align: center;
+  color: #404042;
+  margin: auto;
+}
+
+.right {
+  background: #6c2037;
+  color: white;
+}
+
+.right div input {
+  font-size: 18px;
+  margin-bottom: 20px;
+  padding: 4px;
 }

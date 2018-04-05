@@ -6,56 +6,68 @@ const getUser = () => {
   }
 }
 
-const updatePage = data => {
-  if (data) {
+const targetProductName = (() => {
+  try {
+    return window.loginContainer.attributes.targetProductName.value
+  } catch (e) {
+    return 'cappuccino'
+  }
+})()
+
+const targetProductPoints =
+  {
+    cappuccino: 165,
+    latte: 170,
+    mocha: 250
+  }[targetProductName] || 165
+
+const inIframe = (() => {
+  try {
+    return window.self !== window.top
+  } catch (e) {
+    return true
+  }
+})()
+
+const makeCoffee = userPoints => {
+  console.log(!!window.coffee)
+  window.coffee &&
+    (window.coffee.style.height =
+      parseInt(100 / (targetProductPoints / parseInt(userPoints))) / 100 * 250 +
+      'px')
+  window.onscroll = undefined
+}
+
+const updatePage = user => {
+  if (user) {
     document.getElementById('loginLeft').innerHTML =
       '<div class="leftHeader">Your Costa, your club</div><div>Good morning, ' +
-      data.name.split(' ')[0] +
+      user.name.split(' ')[0] +
       " </div><div>You've collected, " +
-      data.points +
+      user.points +
       ' points</div>'
     document.getElementById('loginRight').innerHTML =
-      '<div>A cappuccino is 165 points</div><div>You are ' +
-      parseInt(100 / (165 / parseInt(data.points))) +
-      '% of the way there!</div>'
+      '<div>A ' +
+      targetProductName +
+      ' is ' +
+      targetProductPoints +
+      ' points</div><div>You are ' +
+      parseInt(100 / (targetProductPoints / parseInt(user.points))) +
+      '% of the way there!</div>' +
+      '<div class="mug"><div class="coffee" id="coffee"></div><div class="coffee-divider">' +
+      targetProductName +
+      '<span class="gray"> - ' +
+      targetProductPoints +
+      ' points</span></div></div>'
+
+    if (!inIframe) {
+      window.onscroll = () => makeCoffee(user.points)
+    } else {
+      makeCoffee(user.points)
+    }
   } else {
     renderLogin()
   }
-}
-
-const get = (url, params) => {
-  const xhr = new XMLHttpRequest()
-  xhr.open('GET', url + '?' + paramify(params))
-  xhr.onload = function() {
-    if (xhr.status === 200) {
-      const data = JSON.parse(xhr.responseText)
-      document.dispatchEvent(
-        new CustomEvent('userLogin', {
-          detail: data
-        })
-      )
-      localStorage.setItem(
-        'user',
-        JSON.stringify({
-          id: 1
-        })
-      )
-    }
-  }
-  xhr.send()
-}
-
-const paramify = object => {
-  var encodedString = ''
-  for (var prop in object) {
-    if (object.hasOwnProperty(prop)) {
-      if (encodedString.length > 0) {
-        encodedString += '&'
-      }
-      encodedString += encodeURI(prop + '=' + object[prop])
-    }
-  }
-  return encodedString
 }
 
 const renderLogin = () => {
@@ -65,13 +77,30 @@ const renderLogin = () => {
     '<div>Username: <input type="text" id="username"></div> <div>Password: <input type="password" id="password"></div> <button onclick="login()">Log in</button>'
 }
 
+const sendLoginEvent = data => {
+  if (data) {
+    document.dispatchEvent(
+      new CustomEvent('userLogin', {
+        detail: data
+      })
+    )
+    localStorage.setItem(
+      'user',
+      JSON.stringify({
+        id: 1
+      })
+    )
+  }
+  updatePage(data)
+}
+
 const login = () => {
   const user =
     (localStorage.getItem('user') &&
       JSON.parse(localStorage.getItem('user'))) ||
     getUser()
   if ((user.username && user.password) || user.id) {
-    get('http://demo9574435.mockable.io/users/', user, updatePage)
+    helpers.get('http://demo9574435.mockable.io/users/', user, sendLoginEvent)
   } else {
     renderLogin()
   }

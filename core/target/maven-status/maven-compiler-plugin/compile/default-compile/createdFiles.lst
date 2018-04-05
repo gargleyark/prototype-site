@@ -1,4 +1,3 @@
-com/aem/community/core/models/HelloWorldModel.class
 com/aem/community/core/servlets/SimpleServlet.class
 com/aem/community/core/package-info.class
 com/aem/community/core/filters/LoggingFilter.class

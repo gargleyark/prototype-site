@@ -1,43 +1,101 @@
 <script>
+const productType = (() => {
+  try {
+    return window.listingContainer.attributes.products.value
+  } catch (e) {
+    return 'coffee'
+  }
+})()
+const falseData = {
+  coffee: {
+    products: [
+      {
+        name: 'latte',
+        price: 10,
+        src:
+          'https://www.thesun.co.uk/wp-content/uploads/2017/03/nintchdbpict000300447384.jpg?strip=all&w=960'
+      },
+      {
+        name: 'cappuccino',
+        price: 15,
+        src:
+          'https://static1.squarespace.com/static/587e655f6b8f5b0c2fafb4bf/58c2eed8ebbd1a9d3cebacfc/5a53f508cab3392ba35d2fdb/1515451699055/'
+      }
+    ]
+  },
+  food: {
+    products: [
+      {
+        name: 'bacon sandwich',
+        price: 5.5,
+        src:
+          'https://i.pinimg.com/originals/0e/f8/4a/0ef84a30685c0ed4dfc2267f1ba3d118.jpg'
+      },
+      {
+        name: 'chicken toastie',
+        price: 7,
+        src: 'https://www.costa.co.uk/media/454535/chicken-chorizo.jpg'
+      }
+    ]
+  },
+  christmas: {
+    products: [
+      {
+        name: 'christmas latte',
+        price: 4,
+        src:
+          'https://i.pinimg.com/236x/bc/25/a1/bc25a1e71f7135dd072668293c0eea41--christmas-menus-christmas-drinks.jpg'
+      },
+      {
+        name: 'mince pies',
+        price: 2,
+        src:
+          'http://ot-foodspotting-production.s3.amazonaws.com/reviews/5972204/thumb_600.jpg?1480102781'
+      }
+    ]
+  }
+}[productType]
+
 const renderListing = (data, template) => {
   let html = ''
   if (data && data.products) {
     for (let index in data.products) {
       const product = data.products[index]
+      const productPrice = (product.price + '').split('.')
+
+      if (productPrice.length < 2) {
+        productPrice.push('00')
+      } else if (productPrice[1].length === 1) {
+        productPrice[1] = productPrice[1] + '0'
+      }
+
       html =
         html +
         template
           .replace(/{name}/g, product.name || '')
-          .replace(/{price}/g, product.price || '')
+          .replace(/{price}/g, productPrice.join('.') || '')
           .replace(/{src}/g, product.src || '')
     }
   }
   document.getElementById('listingContainer').innerHTML = html
 }
 
-const getData = (url, next) => {
-  const xhr = new XMLHttpRequest()
-  xhr.open('GET', url)
-  xhr.onload = function() {
-    if (xhr.status === 200) {
-      let data = xhr.responseText
-      try {
-        data = JSON.parse(xhr.responseText)
-      } catch (e) {}
-      next(data)
-    }
-  }
-  xhr.send()
-}
-
 const getTemplate = data => {
-  getData('http://localhost:4502/content/AEM62App/menuItem.html', template => {
-    renderListing(data, template)
-  })
+  helpers.get(
+    'http://localhost:4502/content/AEM62App/menuItem.html',
+    {},
+    template => {
+      renderListing(falseData, template) //data
+    }
+  )
 }
 
 const getListing = () => {
-  getData('http://demo5716470.mockable.io/products/', getTemplate)
+  helpers.get(
+    'http://demo5716470.mockable.io/products/?type=' + productType,
+    {},
+    getTemplate
+  )
 }
 
 getListing()

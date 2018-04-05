@@ -6,8 +6,15 @@
         jcr:title="English"
         pageTitle="New Project"
         sling:resourceType="AEM62App/components/structure/menuItem">
-        <menuItem
+        <listingImage
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="AEM62App/components/content/menuItem"/>
+            sling:resourceType="AEM62App/components/content/listingImage"/>
+        <listingName
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="AEM62App/components/content/listingName"
+            currencySymbol="£"/>
+        <listingPrice
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="AEM62App/components/content/listingPrice"/>
     </jcr:content>
 </jcr:root>

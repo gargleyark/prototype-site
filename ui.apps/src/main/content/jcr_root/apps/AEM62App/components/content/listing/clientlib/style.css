@@ -16,6 +16,15 @@
 
 @import url('https://fonts.googleapis.com/css?family=Lobster+Two|Magra');
 
+.listingHeader {
+  font-family: 'Lobster Two', cursive;
+  text-align: center;
+  width: 400px;
+  font-size: 28px;
+  margin: auto;
+  margin-top: 20px;
+}
+
 .listingContainer {
   font-family: 'Magra', sans-serif;
   margin: 0px auto;

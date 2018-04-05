@@ -356,6 +356,107 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.models.api</artifactId>
+                <version>1.3.0</version>
+                <scope>provided</scope>
+            </dependency>
+<!--
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>com.day.cq.dam.api</artifactId>
+                <version>1.22.2</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>com.day.cq.dam.api.handler</artifactId>
+                <version>2.0.3</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>com.day.cq.wcm.api</artifactId>
+                <version>1.21.2</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>com.day.cq.wcm.api.policies</artifactId>
+                <version>1.5.2</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>com.day.cq.wcm.foundation.forms</artifactId>
+                <version>5.11.6</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>com.fasterxml.jackson.databind.module</artifactId>
+                <version>2.3.3</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>com.fasterxml.jackson.databind.ser.std</artifactId>
+                <version>2.3.3</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+            	<groupId>org.apache.sling</groupId>
+            	<artifactId>org.apache.sling.api</artifactId>
+            	<version>2.9.1</version>
+            	<scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.api.resource</artifactId>
+                <version>2.10.3</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.api.servlets</artifactId>
+                <version>2.2.3</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.api.wrappers</artifactId>
+                <version>2.6.3</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.models.annotations</artifactId>
+                <version>1.4.2</version>
+                <scope>provided</scope>
+            </dependency> -->
+
+            <dependency>
+                <groupId>com.adobe.cq</groupId>
+                <artifactId>com.adobe.cq.sightly</artifactId>
+                <version>3.1.4</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.models.jacksonexporter</artifactId>
+                <version>1.0.2</version>
+                <scope>provided</scope>
+            </dependency>
+            <!-- <dependency>
+                <groupId>org.apache.sling.api.adapter.Adaptable</groupId>
+                <artifactId>org.apache.sling.api.adapter.Adaptable</artifactId>
+                <version>1.0</version>
+                <scope>provided</scope>
+            </dependency> -->
+            <dependency>
                <groupId>com.adobe.aem</groupId>
                <artifactId>uber-jar</artifactId>
                <version>6.2.0</version>
@@ -363,7 +464,7 @@
                <!-- for AEM6.1 SP1 use this version : <version>6.1.0-SP1-B0001</version> -->
                <!-- for AEM6.1 SP2 use this version : <version>6.1.0-SP2</version> -->
                <!-- for AEM6.2 use this version     : <version>6.2.0</version> -->
-               <classifier>obfuscated-apis</classifier>
+               <classifier>apis</classifier>
                <scope>provided</scope>
            </dependency>
 
@@ -387,10 +488,29 @@
                 <scope>provided</scope>
             </dependency>
             <dependency>
-        <groupId>biz.aQute</groupId>
-        <artifactId>bndlib</artifactId>
-        <version>1.50.0</version>
-        <scope>provided</scope>
+              	<groupId>com.adobe.cq.commerce</groupId>
+              	<artifactId>cq-commerce-core</artifactId>
+              	<version>3.7.4</version>
+              	<scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.adobe.cq</groupId>
+                <artifactId>com.adobe.cq.xf.social</artifactId>
+                <version>1.0.2</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.api</artifactId>
+                <version>2.1.1</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+              <groupId>biz.aQute</groupId>
+              <artifactId>bndlib</artifactId>
+              <version>1.50.0</version>
+              <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.osgi</groupId>
@@ -419,12 +539,12 @@
                 <scope>provided</scope>
             </dependency>
 
-            <dependency>
+            <!-- <dependency>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>org.apache.sling.models.api</artifactId>
                 <version>1.0.0</version>
                 <scope>provided</scope>
-            </dependency>
+            </dependency> -->
 
             <!-- Servlet API -->
             <dependency>

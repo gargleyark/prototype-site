@@ -13,7 +13,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
-<div class="loginContainer" data-sly-use.header="Login">
+<div id="loginContainer" class="loginContainer" data-sly-use.header="Login" targetProductName="${properties.targetProductName || 'cappuccino'}" >
   <div class="left" id="loginLeft"></div>
   <div class="right" id="loginRight"></div>
   <sly data-sly-include="js/login.html" />

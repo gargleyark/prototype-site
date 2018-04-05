@@ -14,6 +14,26 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/foundation/container">
                 <items jcr:primaryType="nt:unstructured">
+                    <targetProductName
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        fieldDescription="Products"
+                        name="./targetProductName"
+                        value="cappuccino">
+                        <items jcr:primaryType="nt:unstructured">
+                             <coffee
+                                 jcr:primaryType="nt:unstructured"
+                                 text="Cappuccino"
+                                 value="cappuccino"/>
+                             <food
+                                  jcr:primaryType="nt:unstructured"
+                                  text="Mocha"
+                                  value="mocha"/>
+                             <christmas
+                                  jcr:primaryType="nt:unstructured"
+                                  text="Latte"
+                                  value="latte"/>
+                        </items>
                 </items>
             </column>
         </items>
